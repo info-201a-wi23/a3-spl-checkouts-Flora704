@@ -56,6 +56,8 @@ most_new_checkouts
 
 
 
+### First Trends Over Time Chart
+#To see the trend of EBOOK checkouts
 
 get_year_materialtype_checkouts <- function() {
   df <- spl_df %>% 
@@ -87,7 +89,7 @@ chart_1
 
 
 
-### First Trends Over Time Chart
+
  # How has the number of print book checkouts changed over time? Compare the total number of checkouts now and five years ago. 
 total_checkout_2023 <- spl_df %>% filter(CheckoutYear == 2023) %>% summarize(total = sum(Checkouts, na.rm = TRUE)) %>%  pull(total)
 
@@ -103,8 +105,8 @@ Difference_between_2023_and_2018
 
 bp <- ggplot(data = spl_df) +
   geom_col(mapping = aes( x = ,
-                          y = charges,
-                          fill = sex)) 
+                          y = ,
+                          fill = )) 
 
 bp + scale_fill_manual(values = c("#FFFEA6", "#6AC2FF"))+                    
   scale_y_continuous(labels = label_number_si()
