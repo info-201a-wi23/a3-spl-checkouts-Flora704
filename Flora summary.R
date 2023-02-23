@@ -42,20 +42,22 @@ Difference_between_2023_and_2018 <- total_checkout_2018 - total_checkout_2023
 
 Difference_between_2023_and_2018
 
-# How many NEW checkouts were there when the most checkouts occurred? 
-# How many checkouts were made when the most checkouts occurred?
+# How many NEW checkouts were there when new checkouts occurred the most? 
 
-most_Checkouts == max(Checkouts, na.rm = TRUE)
 
-most_new_checkouts <- spl_df %>% mutate(new_checkouts = most_Checkouts - lag(most_Checkouts)) %>% filter(most_Checkouts == max(Checkouts, na.rm = TRUE)) %>% pull(new_checkouts)
+most_new_checkouts <- spl_df %>% mutate(new_Checkouts = Checkouts - lag(Checkouts)) %>% filter(new_Checkouts == max(new_Checkouts, na.rm = TRUE)) %>% pull(new_Checkouts)
 
 most_new_checkouts
-
-#what are top three 
 
 
 
 ### First Trends Over Time Chart
+
+
+
+
+
+
 
 
 

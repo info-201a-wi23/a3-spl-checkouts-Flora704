@@ -5,7 +5,10 @@ output: html_document
 
 ### Introduction
 
-In this assignment, I chose to focus on the book related to the author George Orwell. When I was young, I read 1984 and Animal Farm and was impressed by these two books, and I had interest in analyzing my data with this author. As the data is provided by Seattle Public Library, the dataset includes columns like ‘UsageClass’, which means whether it is physical or digital form of book, ‘materialType’, which denotes if it is categorized as book, ebook, sound disc, or video disc, and other columns. In this report, I’m focusing on the average number of checkouts in this dataset, which year had the most/least checkouts, which year had the most/least checkouts for ebooks, how the number of print book checkouts is changed over time, and how many new checkouts there were when the most checkouts occurred. 
+In this assignment, I chose to focus on the book related to the author George Orwell. 
+When I was young, I read 1984 and Animal Farm and was impressed by these two books, and I had interest in analyzing my data with this author. 
+As the data is provided by Seattle Public Library, the dataset includes columns like ‘UsageClass’, which means whether it is physical or digital form of book, ‘materialType’, which denotes if it is categorized as book, ebook, sound disc, or video disc, and other columns. 
+In this report, I’m focusing on the average number of checkouts in this dataset, which year had the most/least checkouts, which year had the most/least checkouts for ebooks, how the number of print book checkouts is changed over time, and how many new checkouts there were when the most checkouts occurred. 
 
 
 
@@ -31,18 +34,21 @@ Finally, when looking at the chances in how many new checkouts there were when t
 This dataset was published by the Seattle Public Library.
 
 - What are the parameters of the data (dates, number of checkouts, kinds of books, etc.)?
-This dataset has columns like ‘UsageClass’, which means whether it is physical or digital form of book, ‘MaterialType’, which denotes if it is categorized as book, ebook, sound disc, or video disc, and ‘CheckoutYear’, ‘CheckoutMonth’, ‘Checkouts’, ‘Creator’, etc. The parameters include when the checkout occurred for this record and the number of times the title was checked out.   
+This dataset has columns like ‘UsageClass’, which means whether it is physical or digital form of book, ‘MaterialType’, which denotes if it is categorized as book, ebook, sound disc, or video disc, and ‘CheckoutYear’, ‘CheckoutMonth’, ‘Checkouts’, ‘Creator’, etc. 
+The parameters include when the checkout occurred for this record and the number of times the title was checked out.   
 
 
 - How was the data collected or generated? 
-The dataset was first provided by the Seattle Public Library, and from the SPL Open Data portal, I chose to use my own datasets by filtering ‘George Orwell’ author. The dataset made for my own use indicates that any column includes ‘George Orwell’ such as either in the ‘Creator’ column or in the ‘Title’ column.  
+The dataset was first provided by the Seattle Public Library, and from the SPL Open Data portal, I chose to use my own datasets by filtering ‘George Orwell’ author. 
+The dataset made for my own use indicates that any column includes ‘George Orwell’ such as either in the ‘Creator’ column or in the ‘Title’ column.  
 
 
 - Why was the data collected?  
 The purpose of the data collected was to analyze how many checkouts there are and how the number of the checkouts has changed over time. 
 
 - What, if any, ethical questions do you need to consider when working with this data?  
-Since this is collected and provided by the Seattle Public Library, I’m not sure what ethical issue there might have arised as it is the public source. However, we can’t assume that the dataset is 100% accurate and true. In other words, there might still be the possibility of fake information and data. 
+Since this is collected and provided by the Seattle Public Library, I’m not sure what ethical issue there might have arised as it is the public source. 
+However, we can’t assume that the dataset is 100% accurate and true. In other words, there might still be the possibility of fake information and data. 
 
 - What are possible limitations or problems with this data?   (at least 200 words)
 
