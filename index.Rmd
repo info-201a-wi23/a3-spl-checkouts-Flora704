@@ -11,12 +11,17 @@ In this assignment, I chose to focus on the book related to the author George Or
 ### Summary Information
 
 The dataset I chose to analyze is close to the author George Orwell, and the average number of checkouts for this dataset is  **`r avg_num_checkout`**. 
-The checkout year with the most checkouts for George Orwell is **`r max_checkout`**.
-The checkout year with the least checkouts for George Orwell is **`r min_checkout`**.
-Also, the checkout year with the most checkouts for ebooks is **`r max_ebook`**.
-The checkout year with the least checkouts for ebooks is **`r min_ebook`**.
-When looking at how the number of print book checkouts has changed over time, I compared the total number of checkouts now and five years ago. For the total check out now, it was **`r total_checkout_now`**. On the other hand, the total check out in 2018 is **`r total_checkout_2018`**. So, the difference in the number of checkouts between 2018 and 2023 is **`r Difference_between_2023_and_2018`**. 
+The number of the most checkout in 2020 in this dataset is **`r max_checkout_2020`**.
+The title of the most checkouts in 2020 in this dataset is **`r max_checkout_2020_title`**.
+
+Also, the number of the most checkouts in 2020 for "ebook" in this dataset is **`r max_ebook_2020`**.
+The title of the most checkouts in 2020 for "ebook" in this dataset is **`r max_ebook_2020_title`**.
+
+When looking at how the number of print book checkouts has changed over time, I compared the total number of checkouts now and five years ago. 
+For the total checkout now, it was **`r total_checkout_2023`**. On the other hand, the total checkout in 2018 is **`r total_checkout_2018`**. 
+So, the difference in the number of checkouts between 2018 and 2023 is **`r Difference_between_2023_and_2018`**. 
 Finally, when looking at the chances of how many new checkouts there were when the most checkouts occurred, it is **`r most_new_checkouts`**. 
+
 
 
 
@@ -55,7 +60,6 @@ For instance, the book title 1984 is also named as ‘Nineteen eighty-four / a n
 ### First Trends Over Time Chart
 
 #To see the trend of books' checkouts, how has the number of checkouts changed over time? 
-
 
 
 ``````{r, echo = FALSE, code = readLines("A3 Chart 1.R"), warning = F, message = F}
