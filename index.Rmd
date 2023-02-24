@@ -20,10 +20,6 @@ Finally, when looking at the chances of how many new checkouts there were when t
 
 
 
-
-
-
-
 ### The Dataset
 
 - Who collected/published the data?  
@@ -36,7 +32,6 @@ The parameters include when the checkout occurred for this record and the number
 - How was the data collected or generated? 
 The dataset was first provided by the Seattle Public Library, and from the SPL Open Data portal, I chose to use my own datasets by filtering ‘George Orwell’ author. 
 The dataset made for my own use indicates that any column includes ‘George Orwell’ such as either in the ‘Creator’ column or in the ‘Title’ column. 
-
 
 - Why was the data collected?  
 The purpose of the data collected was to analyze how many checkouts there are and how the number of the checkouts has changed over time. 
@@ -57,16 +52,13 @@ However, in this dataset, even though they are the same book and have the same t
 For instance, the book title 1984 is also named as ‘Nineteen eighty-four / a novel by George Orwell’ or ‘1984 (Unabridged)’. 
 
 
-
-
-
 ### First Trends Over Time Chart
 
+#To see the trend of books' checkouts, how has the number of checkouts changed over time? 
 
 
 
-
-``````{r, echo = FALSE, warning = FALSE, code = readLines("chart1_example.R")}
+``````{r, echo = FALSE, code = readLines("A3 Chart 1.R"), warning = F, message = F}
 ```
 
 ### Second Trends Over Time Chart
