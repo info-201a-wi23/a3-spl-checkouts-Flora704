@@ -23,8 +23,6 @@ So, the difference in the number of checkouts between 2018 and 2023 is **`r Diff
 Finally, when looking at the chances of how many new checkouts there were when the most checkouts occurred, it is **`r most_new_checkouts`**. 
 
 
-
-
 ### The Dataset
 
 - Who collected/published the data?  
@@ -61,28 +59,22 @@ For instance, the book title 1984 is also named as ‘Nineteen eighty-four / a n
 
 #To see the trend of books' checkouts, how has the number of checkouts changed over time? 
 
+In the first chart, I included this bar chart to see the trend of 'Book's checkouts over time. 
+I thought the bar plot would be a great way to show the trend over time. 
+From 2014 to 2023, there is a checkout year on x axis, and the number of checkouts on y axis. 
+In the bar plot, it seems from 2017, the checkouts have been increasing relatively far more than the previous three years including 2014, 2015, and 2016. 
+As there might be few months in 2023 compared to other checkout years that have the entire twelve months, in 2023 the bar graph is shown as a very low result. 
 
-``````{r, echo = FALSE, code = readLines("A3 Chart 1.R"), warning = F, message = F}
+
+``````{r, echo = FALSE, code = readLines("A3_Chart1.R"), warning = F, message = F}
 ```
 
 ### Second Trends Over Time Chart
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
+Similarly, in the second chart, I included this bar chart to see the trend of the ‘Ebook’s checkouts over time. This time, I brought the Ebook to see how it is different from the books. Since this is to view the trend of a variable over time, I thought the bar plot would be a great way to show the trend over time as well. From 2014 to 2023, there is a checkout year on the x axis, and the number of checkouts on the y axis. In the bar plot, it seems from 2017, the checkouts have been increasing relatively far more than the previous three years including 2014, 2015, and 2016 like the bar chart for just books. One difference compared to the first chart is there is a more gradually increasing trend from 2017 to 2021. But in 2022, there will be a slight decrease from the previous year. Likewise in the first chart, as there might be few months in 2023 compared to other checkout years that have the entire twelve months, in 2023 the bar graph is shown as a very low result. 
 
-The second chart that you will create and include will show another trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
 
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, code = readLines("chart2_example.R")}
+``````{r, echo = FALSE, code = readLines("A3_Chart2.R")}
 ```
 
 ### Your Choice

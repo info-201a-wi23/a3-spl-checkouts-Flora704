@@ -3,6 +3,7 @@
 library("dplyr")
 library("stringr")
 library("ggplot2")
+library("scales")
 
 spl_df <- read.csv("~/Checkout_df.csv", stringsAsFactors = F)
 
@@ -52,23 +53,58 @@ most_new_checkouts
 
 
 ### First Trends Over Time Chart
-#To see the trend of books' checkouts, how has the number of checkouts changed over time? 
+#To see the trend of 'BOOK's checkouts, how has the number of checkouts changed over time? 
 
-df <- spl_df %>% select(MaterialType, CheckoutYear, Checkouts) %>%
+df <- spl_df %>% 
+  select(MaterialType, CheckoutYear, Checkouts) %>%
   group_by(CheckoutYear, MaterialType) %>%
   summarize(total_Checkouts = sum(Checkouts)) 
 
 
 First_df <- spl_df %>% select(MaterialType, CheckoutYear, Checkouts) %>%
-  group_by(CheckoutYear) %>%
+  group_by(CheckoutYear) %>% 
+  filter("2014" <= CheckoutYear & CheckoutYear <= "2023") %>% 
   summarize(total_Checkouts = sum(Checkouts)) 
 
-bp <- ggplot(data = First_df) +
+bp_fir <- ggplot(data = First_df) +
   geom_col(mapping = aes( x = CheckoutYear,
                           y = total_Checkouts,
-                          fill = CheckoutYear))
+                          fill = CheckoutYear)) +
+  scale_y_continuous(labels = label_number_si()) +
+  labs(
+    title = "Trend of Books' Checkouts between 2014 and 2023",
+    x = "Checkout Year",
+    y = "The number of checkouts",
+    color = "Checkout Year"
+  )
 
 
+bp_fir
+
+### Second Trends Over Time Chart
+#To see the trend of 'EBOOK's checkouts, how has the number of checkouts changed over time? 
+
+Second_df <- spl_df %>% select(MaterialType, CheckoutYear, Checkouts) %>%
+  group_by(CheckoutYear) %>% 
+  filter(MaterialType == "EBOOK") %>% 
+  filter("2014" <= CheckoutYear & CheckoutYear <= "2023") %>% 
+  summarize(total_Checkouts = sum(Checkouts)) 
+
+bp_sec <- ggplot(data = Second_df) +
+  geom_col(mapping = aes( x = CheckoutYear,
+                          y = total_Checkouts,
+                          fill = CheckoutYear)) +
+  scale_y_continuous(labels = label_number_si()) +
+  scale_colour_brewer(palette = "Greens") +
+  labs(
+    title = "Trend of Ebooks' Checkouts between 2014 and 2023",
+    x = "Checkout Year",
+    y = "The number of checkouts",
+  ) 
+
+bp_sec
+
+### Third Chart
 
 
 
