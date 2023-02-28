@@ -24,19 +24,23 @@ First_df <- spl_df %>% select(MaterialType, CheckoutYear, Checkouts) %>%
 
 
 #graph
-bp_fir <- ggplot(data = First_df) +
-  geom_col(mapping = aes( x = CheckoutYear,
-                          y = total_Checkouts,
-                          fill = CheckoutYear)) +
-  scale_y_continuous(labels = label_number_si()) +
+chart_1 <- ggplot(data = First_df) +
+  geom_line(aes( x = CheckoutYear,
+                 y = total_Checkouts,
+                 color = total_Checkouts)) +
+  scale_color_gradient(low = "#f2c2ff", high = "#005fad")   +
   labs(
     title = "Trend of Books' Checkouts between 2014 and 2023",
     x = "Checkout Year",
-    y = "The number of checkouts",
-    color = "Checkout Year"
-  )
+    y = "The number of checkouts"
+  ) +
+  scale_y_continuous(labels = label_number_si()) 
+
+chart_1
 
 
-bp_fir
+
+
+
 
 

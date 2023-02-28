@@ -4,6 +4,7 @@ library("dplyr")
 library("stringr")
 library("ggplot2")
 library("scales")
+library("tidyverse")
 
 spl_df <- read.csv("~/Checkout_df.csv", stringsAsFactors = F)
 
@@ -75,9 +76,15 @@ most_new_checkouts <- spl_df %>%
 
 most_new_checkouts
 
+###Three plots
+
+#load file
+spl_df <- read.csv("~/Checkout_df.csv", stringsAsFactors = F)
 
 ### First Trends Over Time Chart
 #To see the trend of 'BOOK's checkouts, how has the number of checkouts changed over time? 
+
+#code
 
 df <- spl_df %>% 
   select(MaterialType, CheckoutYear, Checkouts) %>%
@@ -90,23 +97,32 @@ First_df <- spl_df %>% select(MaterialType, CheckoutYear, Checkouts) %>%
   filter("2014" <= CheckoutYear & CheckoutYear <= "2023") %>% 
   summarize(total_Checkouts = sum(Checkouts)) 
 
-bp_fir <- ggplot(data = First_df) +
-  geom_col(mapping = aes( x = CheckoutYear,
-                          y = total_Checkouts,
-                          fill = CheckoutYear)) +
-  scale_y_continuous(labels = label_number_si()) +
+
+#graph
+chart_1 <- ggplot(data = First_df) +
+  geom_line(aes( x = CheckoutYear,
+                 y = total_Checkouts,
+                 color = total_Checkouts)) +
+  scale_color_gradient(low = "#f2c2ff", high = "#005fad")   +
   labs(
     title = "Trend of Books' Checkouts between 2014 and 2023",
     x = "Checkout Year",
-    y = "The number of checkouts",
-    color = "Checkout Year"
-  )
+    y = "The number of checkouts"
+  ) +
+  scale_y_continuous(labels = label_number_si()) 
 
+chart_1
 
-bp_fir
 
 ### Second Trends Over Time Chart
 #To see the trend of 'EBOOK's checkouts, how has the number of checkouts changed over time? 
+
+#code
+df <- spl_df %>% 
+  select(MaterialType, CheckoutYear, Checkouts) %>%
+  group_by(CheckoutYear, MaterialType) %>%
+  summarize(total_Checkouts = sum(Checkouts)) 
+
 
 Second_df <- spl_df %>% select(MaterialType, CheckoutYear, Checkouts) %>%
   group_by(CheckoutYear) %>% 
@@ -114,22 +130,26 @@ Second_df <- spl_df %>% select(MaterialType, CheckoutYear, Checkouts) %>%
   filter("2014" <= CheckoutYear & CheckoutYear <= "2023") %>% 
   summarize(total_Checkouts = sum(Checkouts)) 
 
-bp_sec <- ggplot(data = Second_df) +
-  geom_col(mapping = aes( x = CheckoutYear,
-                          y = total_Checkouts,
-                          fill = CheckoutYear)) +
-  scale_y_continuous(labels = label_number_si()) +
-  scale_color_brewer(palette = "Greens") +
+#graph
+chart_2 <- ggplot(data = Second_df) +
+  geom_line(mapping = aes( x = CheckoutYear,
+                           y = total_Checkouts,
+                           color = CheckoutYear)) +
+  scale_color_gradient(low = "#E25033", high = "#771C19")   +
   labs(
     title = "Trend of Ebooks' Checkouts between 2014 and 2023",
     x = "Checkout Year",
-    y = "The number of checkouts",
-  ) 
+    y = "The number of checkouts"
+  ) +
+  scale_y_continuous(labels = label_number_si()) 
 
-bp_sec
+chart_2
+
 
 ### Third Chart
-#To see what  the books that the number of checkouts is over 80 are in 2022, make a pie chart. 
+#To see what  the books that the number of checkouts is over 80 are in 2022, make a bar chart. 
+
+#code
 
 Third_df <- spl_df %>% select(CheckoutYear, Checkouts, Title) %>%
   filter("2022" == CheckoutYear) %>% 
@@ -139,12 +159,13 @@ Third_df <- spl_df %>% select(CheckoutYear, Checkouts, Title) %>%
 
 Third_df
 
-bp_last <- ggplot(data = Third_df) +
+#graph
+Chart_3 <- ggplot(data = Third_df) +
   geom_col(mapping = aes( x = Title,
                           y = total_Checkouts,
-                          fill = total_Checkouts)) +
+                          color = total_Checkouts)) +
   scale_y_continuous(labels = label_number_si()) +
-  scale_color_brewer(palette = "Greens") +
+  scale_fill_manual(values = c("#005fad", "#a8eddf", "#deffad", "#f2c2ff", "#ffde82", "#fc8b94", "#e6e3ff")) +
   labs(
     title = "Distribution of the books with the number of checkouts (more than 80)",
     x = "Title of the Book",
@@ -153,9 +174,7 @@ bp_last <- ggplot(data = Third_df) +
   coord_flip() 
 
 
-bp_last
-
-
+Chart_3
 
 
 

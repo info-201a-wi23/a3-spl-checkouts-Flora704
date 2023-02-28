@@ -1,5 +1,7 @@
 ---
 title: "A3: SPL Library Checkouts"
+author: "Flora Lee"
+date: '2023-02-27'
 output: html_document
 ---
 
@@ -62,37 +64,43 @@ For instance, the book title 1984 is also named as ‘Nineteen eighty-four / a n
 
 #To see the trend of books' checkouts, how has the number of checkouts changed over time? 
 
-In the first chart, I included this bar chart to see the trend of 'Book's checkouts over time. 
-I thought the bar plot would be a great way to show the trend over time. 
-From 2014 to 2023, there is a checkout year on x axis, and the number of checkouts on y axis. 
+In the first chart, I included this line plot to see the trend of 'Book's checkouts over time. 
+I thought this plot would be a great way to show the trend over time. 
+From 2014 to 2023, there is a checkout year on the x axis, and the number of checkouts on the y axis. 
 In the bar plot, it seems from 2017, the checkouts have been increasing relatively far more than the previous three years including 2014, 2015, and 2016. 
 As there might be few months in 2023 compared to other checkout years that have the entire twelve months, in 2023 the bar graph is shown as a very low result. 
 
 
-```{r setup, echo = FALSE, message = FALSE, warning = FALSE}
-source("Chart1.R")
+``````{r, echo = FALSE, code = readLines("Chart1.R"), warning = F, message = F}
+
 ```
 
 ### Second Trends Over Time Chart
 
 #To see the trend of 'EBOOK's checkouts, how has the number of checkouts changed over time? 
 
-Similarly, in the second chart, I included this bar chart to see the trend of the ‘Ebook’s checkouts over time. This time, I brought the Ebook to see how it is different from the books. Since this is to view the trend of a variable over time, I thought the bar plot would be a great way to show the trend over time as well. From 2014 to 2023, there is a checkout year on the x axis, and the number of checkouts on the y axis. In the bar plot, it seems from 2017, the checkouts have been increasing relatively far more than the previous three years including 2014, 2015, and 2016 like the bar chart for just books. One difference compared to the first chart is there is a more gradually increasing trend from 2017 to 2021. But in 2022, there will be a slight decrease from the previous year. Likewise in the first chart, as there might be few months in 2023 compared to other checkout years that have the entire twelve months, in 2023 the bar graph is shown as a very low result. 
+Similarly, in the second chart, I included this line plot chart to see the trend of the ‘Ebook’s checkouts over time. 
+This time, I brought the Ebook to see how it is different from the books. 
+Since this is to view the trend of a variable over time, I thought this line plot would be a great way to view the changes over time as well. 
+From 2014 to 2023, there is a checkout year on the x axis, and the number of checkouts on the y axis. 
+In the plot, it seems from 2017, the checkouts have been increasing relatively far more than the previous three years including 2014, 2015, and 2016 like the previous line chart for just books. 
+One difference compared to the first chart is there is a more gradually increasing trend from 2017 to 2021. But in 2022, there will be a slight decrease from the previous year.
+Likewise in the first chart, as there might be few months in 2023 yet compared to other checkout years that have the entire twelve months, in 2023 the line is shown as a very low result.  
 
 
-```{r, echo = FALSE, message = FALSE, warning = FALSE}
-source("Chart2.R")
+``````{r, echo = FALSE, code = readLines("Chart2.R"), warning = F, message = F}
+
 ```
+
 
 ### Third Chart
 
 #To see what  the books that the number of checkouts is over 80 are in 2022, make a pie chart. 
 
+For the last chart, I have a bar chart to see what  the books that the number of checkouts is over 80 are in 2022. By plotting seven book titles that have had more than 80 checkouts, I was able to make a bar chart to see how the books are distributed. From the bar chart, it seems there are three ‘1984’, another three ‘Animal Farm’, and one ‘Orwell's roses’. Total seven books are there and the most checkouts among these are from ‘1984’. 
 
 
+``````{r, echo = FALSE, code = readLines("Chart3.R"), warning = F, message = F}
 
-```{r, echo = FALSE, message = FALSE, warning = FALSE}
-source("Chart3.R")
 ```
-
 
