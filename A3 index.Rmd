@@ -3,17 +3,13 @@ title: "A3: SPL Library Checkouts"
 output: html_document
 ---
 
-library("dplyr")
-library("stringr")
-library("ggplot2")
-library("scales")
-library(knitr)
+```{r echo=FALSE, eval=TRUE, message=FALSE}
 source("Flora summary.R")
+```
 
 ### Introduction
 
 In this assignment, I chose to focus on the book related to the author George Orwell. When I was young, I read 1984 and Animal Farm and was impressed by these two books, and I had an interest in analyzing my data with this author. As the data is provided by Seattle Public Library, the dataset includes columns like ‘UsageClass’, which means whether it is a physical or digital form of a book, ‘materialType’, which denotes if it is categorized as a book, ebook, sound disc, or video disc, and other columns. In this report, I’m focusing on the average number of checkouts in this dataset, which year had the most/least checkouts, which year had the most/least checkouts for ebooks, how the number of print book checkouts is changed over time, and how many new checkouts there were when the most checkouts occurred. 
-
 
 ### Summary Information
 
@@ -37,7 +33,7 @@ This dataset was published by the Seattle Public Library.
 
 - What are the parameters of the data (dates, number of checkouts, kinds of books, etc.)?
 This dataset has columns like ‘UsageClass’, which means whether it is a physical or digital form of a book, ‘MaterialType’, which denotes if it is categorized as a book, ebook, sound disc, or video disc, and ‘CheckoutYear’, ‘CheckoutMonth’, ‘Checkouts’, ‘Creator’, etc. 
-The parameters include when the checkout occurred for this record and the number of times the title was checked out.  
+The parameters include when the checkout occurred for this record and the number of times the title was checked out.
 
 - How was the data collected or generated? 
 The dataset was first provided by the Seattle Public Library, and from the SPL Open Data portal, I chose to use my own datasets by filtering ‘George Orwell’ author. 
@@ -73,8 +69,7 @@ In the bar plot, it seems from 2017, the checkouts have been increasing relative
 As there might be few months in 2023 compared to other checkout years that have the entire twelve months, in 2023 the bar graph is shown as a very low result. 
 
 
-```{r setup, include = FALSE}
-library(knitr)
+```{r setup, echo = FALSE, message = FALSE, warning = FALSE}
 source("Chart1.R")
 ```
 
@@ -85,20 +80,19 @@ source("Chart1.R")
 Similarly, in the second chart, I included this bar chart to see the trend of the ‘Ebook’s checkouts over time. This time, I brought the Ebook to see how it is different from the books. Since this is to view the trend of a variable over time, I thought the bar plot would be a great way to show the trend over time as well. From 2014 to 2023, there is a checkout year on the x axis, and the number of checkouts on the y axis. In the bar plot, it seems from 2017, the checkouts have been increasing relatively far more than the previous three years including 2014, 2015, and 2016 like the bar chart for just books. One difference compared to the first chart is there is a more gradually increasing trend from 2017 to 2021. But in 2022, there will be a slight decrease from the previous year. Likewise in the first chart, as there might be few months in 2023 compared to other checkout years that have the entire twelve months, in 2023 the bar graph is shown as a very low result. 
 
 
-```{r, echo = FALSE, code = readLines("Chart2.R"), warning = F, message = F}
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+source("Chart2.R")
 ```
 
-### Your Choice
+### Third Chart
 
-The last chart is up to you. It could be a line plot, scatter plot, histogram, bar plot, stacked bar plot, and more. Here are some requirements to help guide your design:
+#To see what  the books that the number of checkouts is over 80 are in 2022, make a pie chart. 
 
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear legend title
 
-Here's an example of how to run an R script inside an RMarkdown file:
 
-```{r, echo = FALSE, code = readLines("Chart3.R")}
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+source("Chart3.R")
 ```
 
 

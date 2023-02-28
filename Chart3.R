@@ -1,3 +1,5 @@
+### Third Chart
+#To see what  the books that the number of checkouts is over 80 are in 2022, make a pie chart. 
 
 library("dplyr")
 library("stringr")
@@ -5,8 +7,8 @@ library("ggplot2")
 library("scales")
 
 
-### Third Chart
-#To see what  the books that the number of checkouts is over 80 are in 2022, make a pie chart. 
+#load file
+spl_df <- read.csv("~/Checkout_df.csv", stringsAsFactors = F)
 
 Third_df <- spl_df %>% select(CheckoutYear, Checkouts, Title) %>%
   filter("2022" == CheckoutYear) %>% 

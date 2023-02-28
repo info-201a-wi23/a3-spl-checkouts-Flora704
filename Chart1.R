@@ -6,7 +6,10 @@ library("stringr")
 library("ggplot2")
 library("scales")
 
+#load file
 spl_df <- read.csv("~/Checkout_df.csv", stringsAsFactors = F)
+
+#code
 
 df <- spl_df %>% 
   select(MaterialType, CheckoutYear, Checkouts) %>%
@@ -19,6 +22,8 @@ First_df <- spl_df %>% select(MaterialType, CheckoutYear, Checkouts) %>%
   filter("2014" <= CheckoutYear & CheckoutYear <= "2023") %>% 
   summarize(total_Checkouts = sum(Checkouts)) 
 
+
+#graph
 bp_fir <- ggplot(data = First_df) +
   geom_col(mapping = aes( x = CheckoutYear,
                           y = total_Checkouts,

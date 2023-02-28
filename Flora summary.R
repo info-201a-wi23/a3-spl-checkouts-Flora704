@@ -30,7 +30,6 @@ max_checkout_2020_title <- spl_df %>%
 
 max_checkout_2020_title
 
-
 # What is the most checkouts in 2020 for "ebook" in this dataset?
 max_ebook_2020 <- spl_df %>% 
   filter(MaterialType == "EBOOK") %>% 

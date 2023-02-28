@@ -6,6 +6,7 @@ library("stringr")
 library("ggplot2")
 library("scales")
 
+#load file
 spl_df <- read.csv("~/Checkout_df.csv", stringsAsFactors = F)
 
 df <- spl_df %>% 
