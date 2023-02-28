@@ -60,7 +60,7 @@ However, in this dataset, even though they are the same book and have the same t
 For instance, the book title 1984 is also named as ‘Nineteen eighty-four / a novel by George Orwell’ or ‘1984 (Unabridged)’. 
 
 
-### First Trends Over Time Chart
+### First Chart: Trends Over Time 
 
 #To see the trend of books' checkouts, how has the number of checkouts changed over time? 
 
@@ -75,7 +75,7 @@ As there might be few months in 2023 compared to other checkout years that have 
 
 ```
 
-### Second Trends Over Time Chart
+### Second Chart: Trends Over Time 
 
 #To see the trend of 'EBOOK's checkouts, how has the number of checkouts changed over time? 
 
@@ -95,12 +95,15 @@ Likewise in the first chart, as there might be few months in 2023 yet compared t
 
 ### Third Chart
 
-#To see what  the books that the number of checkouts is over 80 are in 2022, make a pie chart. 
+#To see what  the books that the number of checkouts is over 80 are in 2022, make a bar chart. 
 
-For the last chart, I have a bar chart to see what  the books that the number of checkouts is over 80 are in 2022. By plotting seven book titles that have had more than 80 checkouts, I was able to make a bar chart to see how the books are distributed. From the bar chart, it seems there are three ‘1984’, another three ‘Animal Farm’, and one ‘Orwell's roses’. Total seven books are there and the most checkouts among these are from ‘1984’. 
+For the last chart, I have a bar chart to see what  the books that the number of checkouts is over 80 are in 2022. 
+By plotting seven book titles that have had more than 80 checkouts, I was able to make a bar chart to see how the books are distributed. 
+From the bar chart, it seems there are three ‘1984’, another three ‘Animal Farm’, and one ‘Orwell's roses’. Total seven books are there and the most checkouts among these are from ‘1984’. 
 
 
-``````{r, echo = FALSE, code = readLines("Chart3.R"), warning = F, message = F}
-
+``````{r, echo = FALSE, warning = F, message = F, fig.dim = c(12,6)}
+source("Chart3.R")
+(Chart_3)
 ```
 
